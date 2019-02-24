@@ -40,10 +40,13 @@ group :development, :test do
   gem 'pry'
   gem 'capybara'
   gem 'rspec-rails'
+  gem 'webmock'
   gem 'vcr'
   gem 'shoulda-matchers'
   gem 'figaro'
   gem 'faraday'
+  gem 'faraday_middleware'
+  gem 'simplecov'
 end
 
 group :development do
