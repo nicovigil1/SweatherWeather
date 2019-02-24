@@ -10,7 +10,8 @@ class LocationService
 
   def find_coord(city, state)
     response = conn.get do |req| 
-      req.url "/REST/v1/Locations/US/"
+      req.url "/REST/v1/Locations/"
+      req.params["countryRegion"] = "US"
       req.params["adminDistrict"] = state
       req.params["locality"] = city
       req.params["key"] = ENV["BING_KEY"]
