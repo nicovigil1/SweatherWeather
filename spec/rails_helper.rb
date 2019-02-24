@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -59,3 +62,14 @@ RSpec.configure do |config|
   # arbitrary gems may also be filtered via:
   # config.filter_gems_from_backtrace("gem name")
 end
+
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/cassettes"
+  c.hook_into :webmock
+  c.configure_rspec_metadata!
+  c.filter_sensitive_data("<bing_key>") { ENV["BING_KEY"] }
+  c.filter_sensitive_data("<dark_sky_key>") { ENV["DARK_KEY"] }
+  c.filter_sensitive_data("<flicker_key>") { ENV["FLICKER_KEY"] }
+  c.filter_sensitive_data("<flicker_secret>") { ENV["FLICKER_SECRET"] }
+end
+
