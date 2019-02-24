@@ -68,5 +68,8 @@ VCR.configure do |c|
   c.hook_into :webmock
   c.configure_rspec_metadata!
   c.filter_sensitive_data("<bing_key>") { ENV["BING_KEY"] }
+  c.filter_sensitive_data("<dark_sky_key>") { ENV["DARK_KEY"] }
+  c.filter_sensitive_data("<flicker_key>") { ENV["FLICKER_KEY"] }
+  c.filter_sensitive_data("<flicker_secret>") { ENV["FLICKER_SECRET"] }
 end
 
