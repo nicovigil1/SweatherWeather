@@ -7,5 +7,6 @@ describe "Forecast" do
     expected = JSON.parse(response.body)
 
     expect(expected["data"]["id"]).to eq("1")
+    expect(expected["data"]["type"]).to eq("forecast")
   end 
 end
