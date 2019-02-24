@@ -1,3 +1,6 @@
+require 'simplecov'
+SimpleCov.start
+
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 ENV['RAILS_ENV'] ||= 'test'
@@ -64,5 +67,6 @@ VCR.configure do |c|
   c.cassette_library_dir = "spec/cassettes"
   c.hook_into :webmock
   c.configure_rspec_metadata!
+  c.filter_sensitive_data("<bing_key>") { ENV["BING_KEY"] }
 end
 
