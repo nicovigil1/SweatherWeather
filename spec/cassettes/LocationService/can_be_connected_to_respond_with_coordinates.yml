@@ -1,0 +1,61 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://dev.virtualearth.net/REST/v1/Locations/?adminDistrict=CO&countryRegion=US&key=<bing_key>&locality=Denver
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.15.4
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Cache-Control:
+      - no-cache
+      Transfer-Encoding:
+      - chunked
+      Content-Type:
+      - application/json; charset=utf-8
+      Vary:
+      - Accept-Encoding
+      Server:
+      - Microsoft-IIS/10.0
+      X-Bm-Traceid:
+      - de94327d612a402fa6da6c906a6ae545
+      X-Bm-Be-Elapsed:
+      - '45'
+      X-Msedge-Ref:
+      - 'Ref A: 088B4E64281B4505BB80CECEA6E1F266 Ref B: CH1EDGE0215 Ref C: 2019-02-24T22:17:19Z'
+      X-Bm-Fe-Elapsed:
+      - '63'
+      X-Bm-Srv:
+      - CH1E7AEC3B
+      X-Ms-Bm-Ws-Info:
+      - '0'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - POST, GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type
+      X-Aspnet-Version:
+      - 4.0.30319
+      X-Powered-By:
+      - ASP.NET
+      Date:
+      - Sun, 24 Feb 2019 22:17:19 GMT
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJhdXRoZW50aWNhdGlvblJlc3VsdENvZGUiOiJWYWxpZENyZWRlbnRpYWxzIiwiYnJhbmRMb2dvVXJpIjoiaHR0cDpcL1wvZGV2LnZpcnR1YWxlYXJ0aC5uZXRcL0JyYW5kaW5nXC9sb2dvX3Bvd2VyZWRfYnkucG5nIiwiY29weXJpZ2h0IjoiQ29weXJpZ2h0IMKpIDIwMTkgTWljcm9zb2Z0IGFuZCBpdHMgc3VwcGxpZXJzLiBBbGwgcmlnaHRzIHJlc2VydmVkLiBUaGlzIEFQSSBjYW5ub3QgYmUgYWNjZXNzZWQgYW5kIHRoZSBjb250ZW50IGFuZCBhbnkgcmVzdWx0cyBtYXkgbm90IGJlIHVzZWQsIHJlcHJvZHVjZWQgb3IgdHJhbnNtaXR0ZWQgaW4gYW55IG1hbm5lciB3aXRob3V0IGV4cHJlc3Mgd3JpdHRlbiBwZXJtaXNzaW9uIGZyb20gTWljcm9zb2Z0IENvcnBvcmF0aW9uLiIsInJlc291cmNlU2V0cyI6W3siZXN0aW1hdGVkVG90YWwiOjEsInJlc291cmNlcyI6W3siX190eXBlIjoiTG9jYXRpb246aHR0cDpcL1wvc2NoZW1hcy5taWNyb3NvZnQuY29tXC9zZWFyY2hcL2xvY2FsXC93c1wvcmVzdFwvdjEiLCJiYm94IjpbMzkuMzk0NzIxOTg0ODYzMjgxLC0xMDUuNzEzMDgxMzU5ODYzMjgsNDAuMDg3NDg2MjY3MDg5ODQ0LC0xMDQuMjU1Mzc4NzIzMTQ0NTNdLCJuYW1lIjoiRGVudmVyLCBDTyIsInBvaW50Ijp7InR5cGUiOiJQb2ludCIsImNvb3JkaW5hdGVzIjpbMzkuNzQwMDA5MzA3ODYxMzI4LC0xMDQuOTkyMDE5NjUzMzIwMzFdfSwiYWRkcmVzcyI6eyJhZG1pbkRpc3RyaWN0IjoiQ08iLCJhZG1pbkRpc3RyaWN0MiI6IkRlbnZlciBDb3VudHkiLCJjb3VudHJ5UmVnaW9uIjoiVW5pdGVkIFN0YXRlcyIsImZvcm1hdHRlZEFkZHJlc3MiOiJEZW52ZXIsIENPIiwibG9jYWxpdHkiOiJEZW52ZXIifSwiY29uZmlkZW5jZSI6IkhpZ2giLCJlbnRpdHlUeXBlIjoiUG9wdWxhdGVkUGxhY2UiLCJnZW9jb2RlUG9pbnRzIjpbeyJ0eXBlIjoiUG9pbnQiLCJjb29yZGluYXRlcyI6WzM5Ljc0MDAwOTMwNzg2MTMyOCwtMTA0Ljk5MjAxOTY1MzMyMDMxXSwiY2FsY3VsYXRpb25NZXRob2QiOiJSb29mdG9wIiwidXNhZ2VUeXBlcyI6WyJEaXNwbGF5Il19XSwibWF0Y2hDb2RlcyI6WyJHb29kIl19XX1dLCJzdGF0dXNDb2RlIjoyMDAsInN0YXR1c0Rlc2NyaXB0aW9uIjoiT0siLCJ0cmFjZUlkIjoiZGU5NDMyN2Q2MTJhNDAyZmE2ZGE2YzkwNmE2YWU1NDV8Q0gxRTdBRUMzQnw3LjcuMC4wfFJlZiBBOiAwODhCNEU2NDI4MUI0NTA1QkI4MENFQ0VBNkUxRjI2NiBSZWYgQjogQ0gxRURHRTAyMTUgUmVmIEM6IDIwMTktMDItMjRUMjI6MTc6MTlaIn0=
+    http_version: 
+  recorded_at: Sun, 24 Feb 2019 22:17:20 GMT
+recorded_with: VCR 4.0.0
