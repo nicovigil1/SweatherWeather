@@ -1,13 +1,11 @@
 require "rails_helper"
 
 describe "Gif Service" do
-  it "can generate a gif from a string" do 
+  it "can generate a gif url from a string", :vcr do 
     service = GifService.new
     testing123 = "Mostly sunny in the morning"
-    expected = service.from_summary(testing123)
+    expected = service.gif_from_summary(testing123)
 
-
-    require 'pry'; binding.pry
-    expect(expected.status).to eq(200) 
+    expect(expected).to include("https") 
   end 
 end
