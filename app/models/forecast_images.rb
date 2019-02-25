@@ -1,8 +1,9 @@
 class ForecastImages
-  attr_reader :images
+  attr_reader :images, :id
   def initialize(location)
     @daily_forecast = gen_daily_forecast(location)
     @images = gen_gif_facades
+    @id = nil
   end 
 
   def gen_gif_facades
