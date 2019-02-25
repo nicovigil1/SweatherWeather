@@ -14,4 +14,4 @@ class WeatherService
       req.url "/forecast/#{ENV['DARK_KEY']}/#{@lat_lon}"
     end.body
   end
-end 
+end

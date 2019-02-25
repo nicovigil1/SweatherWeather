@@ -14,7 +14,6 @@ describe "Photo Service" do
     service = PhotoService.new(lat_long)
 
     expected = service.generate_img_link
-    require 'pry'; binding.pry
     expect(expected).to include("farm")
   end 
 end
