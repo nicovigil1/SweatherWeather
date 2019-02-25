@@ -15,4 +15,4 @@ class GifService
       req.params["s"] = string
     end.body[:data][:url]
   end 
-end 
+end
