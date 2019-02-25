@@ -4,6 +4,8 @@ describe "Giphy can be displayed" do
   it 'can get a list of giphy objects', :vcr do
     get "/api/v1/gifs?location=denver,co"
 
-    require 'pry'; binding.pry
+    expected = JSON.parse(response.body)
+
+    expect(expected["data"]["attributes"]["image"]).to be_truthy 
   end 
 end
