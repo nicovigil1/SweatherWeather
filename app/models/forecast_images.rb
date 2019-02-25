@@ -1,7 +1,7 @@
 class ForecastImages
   attr_reader :images
-  def initialize(forecast)
-    @daily_forecast = forecast
+  def initialize(location)
+    @daily_forecast = gen_daily_forecast(location)
     @images = gen_gif_facades
   end 
 
@@ -10,4 +10,8 @@ class ForecastImages
       GifFacade.new(forecast)
     end 
   end
+
+  def gen_daily_forecast(location)
+    Forecast.new(location).predict[:daily][:data]
+  end 
 end 
