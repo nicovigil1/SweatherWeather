@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users, only: [:create]
       post "/sessions", to: "sessions#create", as: "sessions"
       resources :favorites, only: [:create, :index, :destroy]
+      get "/gifs", to: "gifs#index", as: "gifs"
     end
   end
 end
