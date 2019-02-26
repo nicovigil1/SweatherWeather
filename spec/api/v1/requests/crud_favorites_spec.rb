@@ -48,16 +48,33 @@ describe "Favorites" do
   end
 
   context "delete" do 
-    xit "can delete an endpoint" do 
+    it "can delete an endpoint" do
+      user = User.create(email: "email", password: "password", token: "1234")
       params = {location: "Denver, CO", api_key: "1234"}
       Favorite.create(params)
 
-      request_params = {"api_key": "jgn983hy48thw9begh98h4539h4",
+      request_params = {"api_key": "1234",
                         "location": "Denver, CO"}
 
-      delete api_v1_favorites_path(request_params)
+      delete api_v1_favorite_path(request_params)
+      
+      parsed_response = JSON.parse(response.body)
 
-      require 'pry'; binding.pry
+      expect(parsed_response).to have_key("noice")
+    end 
+
+    it "cant delete an endpoint with bad creds" do
+      params = {location: "Denver, CO", api_key: "1234"}
+      Favorite.create(params)
+
+      request_params = {"api_key": "asdfsadgag",
+                        "location": "Denver, CO"}
+
+      delete api_v1_favorite_path(request_params)
+      
+      parsed_response = JSON.parse(response.body)
+
+      expect(parsed_response).to have_key("error")
     end 
   end 
 end

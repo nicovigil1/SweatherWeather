@@ -5,7 +5,8 @@ Rails.application.routes.draw do
       get "/forecast", to: "forecast#index", as: "forecast"
       resources :users, only: [:create]
       post "/sessions", to: "sessions#create", as: "sessions"
-      resources :favorites, only: [:create, :index, :destroy]
+      resources :favorites, only: [:create, :index]
+      delete "/favorites", to: "favorites#destroy", as: "favorite"
       get "/gifs", to: "gifs#index", as: "gifs"
     end
   end

@@ -18,12 +18,21 @@ class Api::V1::FavoritesController < ApplicationController
   end
   
   def destroy
-    
+    if find_favorites
+      @favorite.destroy
+      render json: {noice: "ya deleted that favorite"}, status: 401
+    else 
+      render json: {error: "an error occured"}, status: 401
+    end
   end 
   
   private 
 
   def favorites_params
     params.permit(:location, :api_key)
+  end 
+
+  def find_favorites
+    @favorite ||= Favorite.find_by(api_key: params["api_key"], location: params["location"])
   end 
 end
