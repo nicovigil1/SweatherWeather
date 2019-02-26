@@ -1,11 +1,12 @@
 require "rails_helper"
 describe "Session Creation/Login" do
-  it 'can register with good credentials' do 
+  it 'can sign in with good credentials' do 
     params = {
       email: "example@example.com",
       password: "password",
       token: 123
     }
+    
     User.create(params)
     
     post api_v1_sessions_path(params) 
@@ -13,7 +14,7 @@ describe "Session Creation/Login" do
     expect(response.status).to eq(200)
   end 
 
-  it 'can register with good credentials' do 
+  it 'cant sign in with bad credentials' do 
     params = {
       email: "example@example.com",
       password: "password",
