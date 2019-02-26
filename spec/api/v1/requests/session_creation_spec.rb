@@ -20,7 +20,7 @@ describe "Session Creation/Login" do
     }
     
     post api_v1_sessions_path(params) 
-    
+
     expect(response.status).to eq(401)
     expect(User.all.length).to eq(0)
   end 

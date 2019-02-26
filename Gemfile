@@ -49,6 +49,7 @@ group :development, :test do
   gem 'faraday'
   gem 'faraday_middleware'
   gem 'simplecov'
+  gem 'database_cleaner'
 end
 
 group :development do
