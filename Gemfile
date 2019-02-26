@@ -35,6 +35,8 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'multi_xml'
 gem 'fast_jsonapi'
+gem 'faraday'
+gem 'figaro'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -45,8 +47,6 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'shoulda-matchers'
-  gem 'figaro'
-  gem 'faraday'
   gem 'faraday_middleware'
   gem 'simplecov'
   gem 'database_cleaner'
