@@ -36,6 +36,7 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'multi_xml'
 gem 'fast_jsonapi'
 gem 'faraday'
+gem 'faraday_middleware'
 gem 'figaro'
 
 group :development, :test do
@@ -47,7 +48,6 @@ group :development, :test do
   gem 'webmock'
   gem 'vcr'
   gem 'shoulda-matchers'
-  gem 'faraday_middleware'
   gem 'simplecov'
   gem 'database_cleaner'
 end
