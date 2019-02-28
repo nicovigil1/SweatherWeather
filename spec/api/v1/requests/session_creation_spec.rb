@@ -25,5 +25,20 @@ describe "Session Creation/Login" do
     expect(response.status).to eq(401)
     expect(User.all.length).to eq(0)
   end 
+
+  it 'cant sign in twice' do 
+    params = {
+      email: "example@example.com",
+      password: "password",
+    }
+    
+    post api_v1_sessions_path(params) 
+    
+    expect(response.status).to eq(401)
+    expect(User.all.length).to eq(0)
+    
+    post api_v1_sessions_path(params)
+    expect(User.all.length).to eq(0)
+  end 
 end
   
