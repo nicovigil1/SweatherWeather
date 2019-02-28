@@ -8,6 +8,7 @@ Rails.application.routes.draw do
       resources :favorites, only: [:create, :index]
       delete "/favorites", to: "favorites#destroy", as: "favorite"
       get "/gifs", to: "gifs#index", as: "gifs"
+      get "/backgrounds", to: "backgrounds#index", as: "backgrounds"
     end
   end
 end
