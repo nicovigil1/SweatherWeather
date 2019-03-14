@@ -36,8 +36,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'multi_xml'
 gem 'fast_jsonapi'
 gem 'faraday'
- gem 'faraday_middleware'
+gem 'faraday_middleware'
 gem 'figaro'
+gem 'rack-cors', :require => 'rack/cors'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
