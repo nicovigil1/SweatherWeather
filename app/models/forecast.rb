@@ -13,4 +13,8 @@ class Forecast
     weather_service = WeatherService.new(coord)
     weather_service.weather
   end 
+
+  def coords
+    @location_service.find_coord(@city, @state)
+  end 
 end 
